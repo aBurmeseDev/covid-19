@@ -45,6 +45,9 @@ class App extends Component {
     })
   }
 
+  async getCountryData(e) {
+    const response = await Axios.get("https://covid19.mathdro.id/api/countries/USA")
+  }
   renderCountryArr() {
     return this.state.countriesArr.map((country, i) => {
       return <option key={i}>{country}</option>
@@ -57,7 +60,7 @@ class App extends Component {
         <h2 className="text-center">Hello from the inside...</h2>
         <div className="row">
           <div className="col-10 py-5">
-            <select className="custom-select">
+            <select onChange={this.getCountryData} className="custom-select">
               <option selected>Select Country</option>
               {this.renderCountryArr()}
             </select>
