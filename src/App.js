@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
   state = {
@@ -23,11 +24,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          Hello from the inside...
-      </header>
+      <div className="container">
+        <div className="row">
+          <div className="col-md">
+            <h3>Confirmed Cases</h3>
+            <h4>{this.state.confirmed}</h4>
+          </div>
+          <div className="col-md">
+            <h3>Recovered</h3>
+            <h4>{this.state.recovered}</h4>
+          </div>
+          <div className="col-md">
+            <h3>Deaths</h3>
+            <h4>{this.state.deaths}</h4>
+          </div>
+        </div>
       </div>
+
     )
   }
 }
