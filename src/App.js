@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios'
 import "./App.css"
 
-import { Container, Row, Col, Card, Alert } from "react-bootstrap"
+import { Container, Row, Col, Card, Alert, ListGroup, Button } from "react-bootstrap"
 
 
 class App extends Component {
@@ -105,6 +105,25 @@ class App extends Component {
           </Col>
         </Row>
         {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Update: {this.state.update}</Alert> : " "}
+        <Row style={{ marginTop: "2rem" }}>
+
+          <Col xs={12} style={{ paddingTop: '1rem' }}>
+            <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
+              <h2>Donations</h2>
+              <ListGroup >
+                <Button style={{ marginTop: "0.5rem" }} href="https://covid19responsefund.org/">
+                  WHO Response Fund
+                </Button>
+                <Button style={{ marginTop: "0.5rem" }} href="https://www.cdcfoundation.org/give/ways-to-give">
+                  CDC Foundation
+                </Button>
+                <Button style={{ marginTop: "0.5rem" }} href="https://donate.sunnybrook.ca/donation-landing">
+                  Sunnybrook Health Care Centre
+                </Button>
+              </ListGroup>
+            </Card>
+          </Col>
+        </Row>
       </Container>
 
 
