@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import "./App.css"
+
+import { Container, Row, Col, Card, Alert } from "react-bootstrap"
+
 
 class App extends Component {
 
@@ -70,33 +72,80 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+
+
+      <Container>
         <h2 className="text-center">Hello from the inside...</h2>
-        <div className="row">
-          <div className="col-10 py-5">
+        <Row>
+          <Col>
             <select onChange={this.getCountryData} className="custom-select">
               <option selected>Select Country</option>
               {this.renderCountryArr()}
             </select>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col py-3 px-lg-5 border bg-light">
-            <h3>Cases</h3>
-            <h4>{this.state.confirmed}</h4>
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            <h3>Recovered</h3>
-            <h4>{this.state.recovered}</h4>
-          </div>
-          <div className="col py-3 px-lg-5 border bg-light">
-            <h3>Deaths</h3>
-            <h4>{this.state.deaths}</h4>
-          </div>
-        </div>
-        {this.state.showUpdate ? <span> Last Update: {this.state.update}</span> : " "}
+          </Col>
+        </Row>
+        <Row style={{ marginTop: "2rem" }}>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Card bg="warning" style={{ width: 'auto', padding: '7px' }} className="text-center" fluid>
+              <h3>Cases</h3>
+              <h3 style={{ fontFamily: 'monospace' }}>{this.state.confirmed}</h3>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Card bg="success" style={{ width: 'auto', padding: '7px' }} className="text-center">
+              <h3>Recovered</h3>
+              <h3 style={{ fontFamily: 'monospace' }}>{this.state.recovered}</h3>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Card bg="danger" style={{ width: 'auto', padding: '7px' }} className="text-center">
+              <h3>Deaths</h3>
+              <h3 style={{ fontFamily: 'monospace' }}>{this.state.deaths}</h3>
+            </Card>
+          </Col>
+        </Row>
+        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Update: {this.state.update}</Alert> : " "}
+      </Container>
 
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      // <div className="container">
+      //   <h2 className="text-center">Hello from the inside...</h2>
+      //   <div className="row">
+      //     <div className="col-sm list">
+      //       <select onChange={this.getCountryData} className="custom-select">
+      //         <option selected>Select Country</option>
+      //         {this.renderCountryArr()}
+      //       </select>
+      //     </div>
+      //   </div>
+      //   <div className="row">
+      //     <div className="col py-3 px-lg-5 border bg-light">
+      //       <h3>Cases</h3>
+      //       <h4>{this.state.confirmed}</h4>
+      //     </div>
+      //     <div className="col py-3 px-lg-5 border bg-light">
+      //       <h3>Recovered</h3>
+      //       <h4>{this.state.recovered}</h4>
+      //     </div>
+      //     <div className="col py-3 px-lg-5 border bg-light">
+      //       <h3>Deaths</h3>
+      //       <h4>{this.state.deaths}</h4>
+      //     </div>
+      //   </div>
+      //   {this.state.showUpdate ? <span> Last Update: {this.state.update}</span> : " "}
+
+      // </div>
 
     )
   }

@@ -1,0 +1,13 @@
+html {
+  height: 100vh;
+  margin: 12px;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: monospace;
+
+}
+h3 {
+  font-family: serif;
+}
