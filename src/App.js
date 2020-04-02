@@ -86,7 +86,7 @@ class App extends Component {
         </Row>
         <Row style={{ marginTop: "2rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Card bg="warning" style={{ width: 'auto', padding: '7px' }} className="text-center" fluid>
+            <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center" fluid>
               <h3>Cases</h3>
               <h3 style={{ fontFamily: 'monospace' }}>{this.state.confirmed}</h3>
             </Card>
@@ -104,18 +104,18 @@ class App extends Component {
             </Card>
           </Col>
         </Row>
-        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Update: {this.state.update}</Alert> : " "}
+        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Updated: {this.state.update}</Alert> : " "}
         <Row style={{ marginTop: "2rem" }}>
 
           <Col xs={12} style={{ paddingTop: '1rem' }}>
             <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h2>Donations</h2>
               <ListGroup >
-                <Button style={{ marginTop: "0.5rem" }} href="https://covid19responsefund.org/">
-                  WHO Response Fund
-                </Button>
                 <Button style={{ marginTop: "0.5rem" }} href="https://www.cdcfoundation.org/give/ways-to-give">
                   CDC Foundation
+                </Button>
+                <Button style={{ marginTop: "0.5rem" }} href="https://covid19responsefund.org/">
+                  WHO Response Fund
                 </Button>
                 <Button style={{ marginTop: "0.5rem" }} href="https://donate.sunnybrook.ca/donation-landing">
                   Sunnybrook Health Care Centre
