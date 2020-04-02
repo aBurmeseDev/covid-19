@@ -8,7 +8,7 @@ class App extends Component {
     confirmed: 100000,
     recovered: 50000,
     deaths: 7000,
-    countries: []
+    countriesArr: []
   }
   componentDidMount() {
     this.getData()
@@ -45,9 +45,24 @@ class App extends Component {
     })
   }
 
+  renderCountryArr() {
+    return this.state.countriesArr.map((country, i) => {
+      return <option key={i}>{country}</option>
+    })
+  }
+
   render() {
     return (
       <div className="container">
+        <h2 className="text-center">Hello from the inside...</h2>
+        <div className="row">
+          <div className="col-10 py-5">
+            <select className="custom-select">
+              <option selected>Select Country</option>
+              {this.renderCountryArr()}
+            </select>
+          </div>
+        </div>
         <div className="row">
           <div className="col py-3 px-lg-5 border bg-light">
             <h3>Confirmed</h3>
