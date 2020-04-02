@@ -4,12 +4,19 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
-  state = {
-    confirmed: 100000,
-    recovered: 50000,
-    deaths: 7000,
-    countriesArr: []
+
+  constructor(props) {
+    super(props);
+    this.getCountryData = this.getCountryData.bind(this)
+    this.state = {
+      confirmed: 1,
+      recovered: 5,
+      deaths: 7,
+      countriesArr: []
+    }
   }
+
+
   componentDidMount() {
     this.getData()
   }
@@ -24,18 +31,6 @@ class App extends Component {
       countriesArr.push(locationArr[i].name)
     }
     console.log(countriesArr)
-    // console.log(countriesArr)
-    // const countries = Object.keys(resLocation.data.countries)
-
-    // function toObject(locationArr) {
-    //   var rv = {};
-    //   for (var i = 0; i < locationArr.length; ++i)
-    //     rv[i] = locationArr[i];
-    //   return rv;
-    //   console.log(rv)
-    // }
-    // toObject(locationArr);
-
 
     this.setState({
       confirmed: response.data.confirmed.value,
@@ -46,7 +41,12 @@ class App extends Component {
   }
 
   async getCountryData(e) {
-    const response = await Axios.get("https://covid19.mathdro.id/api/countries/USA")
+    const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
+    this.setState({
+      confirmed: response.data.confirmed.value,
+      recovered: response.data.recovered.value,
+      deaths: response.data.deaths.value,
+    })
   }
   renderCountryArr() {
     return this.state.countriesArr.map((country, i) => {
@@ -68,7 +68,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col py-3 px-lg-5 border bg-light">
-            <h3>Confirmed</h3>
+            <h3>Cases</h3>
             <h4>{this.state.confirmed}</h4>
           </div>
           <div className="col py-3 px-lg-5 border bg-light">
