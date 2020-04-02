@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
 import "./App.css"
-
+import NumberFormat from 'react-number-format';
 import { Container, Row, Col, Card, Alert, ListGroup, Button } from "react-bootstrap"
 
 
@@ -106,20 +106,20 @@ class App extends Component {
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center">
               <h4>Cases</h4>
-              <h1 style={{ fontFamily: 'monospace' }}>{this.state.confirmed}</h1>
+              <NumberFormat value={this.state.confirmed} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
               <span>Outside China: {this.state.outsideChina}</span>
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card bg="success" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h4>Recovered</h4>
-              <h1 style={{ fontFamily: 'monospace' }}>{this.state.recovered}</h1>
+              <NumberFormat value={this.state.recovered} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card bg="danger" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h4>Deaths</h4>
-              <h1 style={{ fontFamily: 'monospace' }}>{this.state.deaths}</h1>
+              <NumberFormat value={this.state.deaths} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
             </Card>
           </Col>
         </Row>
