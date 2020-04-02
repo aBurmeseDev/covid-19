@@ -12,10 +12,11 @@ class App extends Component {
       confirmed: 1,
       recovered: 5,
       deaths: 7,
-      countriesArr: []
+      countriesArr: [],
+      update: " ",
+      showUpdate: false
     }
   }
-
 
   componentDidMount() {
     this.getData()
@@ -41,12 +42,25 @@ class App extends Component {
   }
 
   async getCountryData(e) {
-    const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
-    this.setState({
-      confirmed: response.data.confirmed.value,
-      recovered: response.data.recovered.value,
-      deaths: response.data.deaths.value,
-    })
+    try {
+      const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
+      this.setState({
+        confirmed: response.data.confirmed.value,
+        recovered: response.data.recovered.value,
+        deaths: response.data.deaths.value,
+        update: Date(response.data.lastUpdate),
+        showUpdate: true
+      })
+    }
+    catch (err) {
+      if (err.response.status === 404) {
+        this.setState({
+          confirmed: "No Data Available",
+          recovered: "No Data Available",
+          deaths: "No Data Available",
+        })
+      }
+    }
   }
   renderCountryArr() {
     return this.state.countriesArr.map((country, i) => {
@@ -80,6 +94,8 @@ class App extends Component {
             <h4>{this.state.deaths}</h4>
           </div>
         </div>
+        {this.state.showUpdate ? <span> Last Update: {this.state.update}</span> : " "}
+
       </div>
 
     )
