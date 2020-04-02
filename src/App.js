@@ -16,12 +16,15 @@ class App extends Component {
       deaths: 7,
       countriesArr: [],
       update: " ",
-      showUpdate: false
+      showUpdate: false,
+      outsideChina: 9,
+      percent: 10
     }
   }
 
   componentDidMount() {
     this.getData()
+    this.getDailyData()
   }
 
   async getData() {
@@ -33,7 +36,7 @@ class App extends Component {
     for (let i = 0, l = locationArr.length; i < l; i++) {
       countriesArr.push(locationArr[i].name)
     }
-    console.log(countriesArr)
+    //console.log(countriesArr)
 
     this.setState({
       confirmed: response.data.confirmed.value,
@@ -46,6 +49,7 @@ class App extends Component {
   async getCountryData(e) {
     try {
       const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
+
       this.setState({
         confirmed: response.data.confirmed.value,
         recovered: response.data.recovered.value,
@@ -53,6 +57,7 @@ class App extends Component {
         update: Date(response.data.lastUpdate),
         showUpdate: true
       })
+
     }
     catch (err) {
       if (err.response.status === 404) {
@@ -64,6 +69,18 @@ class App extends Component {
       }
     }
   }
+
+  async getDailyData() {
+
+    const response = await Axios.get("https://covid19.mathdro.id/api/daily")
+    console.log(response.data.slice(-1)[0].confirmed.outsideChina)
+    let lastItem = response.data.slice(-1)[0]
+    this.setState({
+      outsideChina: lastItem.confirmed.outsideChina
+    })
+
+  }
+
   renderCountryArr() {
     return this.state.countriesArr.map((country, i) => {
       return <option key={i}>{country}</option>
@@ -71,6 +88,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
 
 
@@ -79,28 +97,29 @@ class App extends Component {
         <Row>
           <Col>
             <select onChange={this.getCountryData} className="custom-select">
-              <option selected>Select Country</option>
+              <option defaultValue>Select Country</option>
               {this.renderCountryArr()}
             </select>
           </Col>
         </Row>
         <Row style={{ marginTop: "2rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center" fluid>
-              <h3>Cases</h3>
-              <h3 style={{ fontFamily: 'monospace' }}>{this.state.confirmed}</h3>
+            <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center">
+              <h4>Cases</h4>
+              <h1 style={{ fontFamily: 'monospace' }}>{this.state.confirmed}</h1>
+              <span>Outside China: {this.state.outsideChina}</span>
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card bg="success" style={{ width: 'auto', padding: '7px' }} className="text-center">
-              <h3>Recovered</h3>
-              <h3 style={{ fontFamily: 'monospace' }}>{this.state.recovered}</h3>
+              <h4>Recovered</h4>
+              <h1 style={{ fontFamily: 'monospace' }}>{this.state.recovered}</h1>
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card bg="danger" style={{ width: 'auto', padding: '7px' }} className="text-center">
-              <h3>Deaths</h3>
-              <h3 style={{ fontFamily: 'monospace' }}>{this.state.deaths}</h3>
+              <h4>Deaths</h4>
+              <h1 style={{ fontFamily: 'monospace' }}>{this.state.deaths}</h1>
             </Card>
           </Col>
         </Row>

@@ -5,11 +5,9 @@ html {
   
 }
 
-h2 {
+h2, h1 {
   font-family: monospace;
 }
-h3 {
-  color: #fff;
+h4 {
   font-family: serif;
-  font-size: 2.5rem
 }
