@@ -17,7 +17,12 @@ class App extends Component {
       countriesArr: [],
       update: " ",
       showUpdate: false,
-      outsideChina: 9
+      confirmedOC: 9,
+      recoveredOC: 6,
+      deathsOC: 3,
+      confirmedIC: 9,
+      recoveredIC: 6,
+      deathsIC: 3
     }
   }
 
@@ -81,7 +86,13 @@ class App extends Component {
     console.log(response.data.slice(-1)[0].confirmed.outsideChina)
     let lastItem = response.data.slice(-1)[0]
     this.setState({
-      outsideChina: lastItem.confirmed.outsideChina
+      confirmedOC: lastItem.confirmed.outsideChina,
+      recoveredOC: lastItem.recovered.outsideChina,
+      deathsOC: lastItem.deaths.outsideChina,
+      confirmedIC: lastItem.confirmed.china,
+      recoveredIC: lastItem.recovered.china,
+      deathsIC: lastItem.deaths.china,
+
     })
 
   }
@@ -99,7 +110,7 @@ class App extends Component {
 
 
       <Container>
-        <h2 className="text-center">Hello from the inside...</h2>
+        <h5 className="text-center">Hello from the inside...</h5>
 
         <Row style={{ marginTop: '2rem' }}>
           <Col>
@@ -115,7 +126,9 @@ class App extends Component {
             <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center">
               <h4>Confirmed Cases</h4>
               <NumberFormat value={this.state.confirmed} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
-              {this.state.showUpdate ? null : <NumberFormat value={this.state.outsideChina} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.confirmedIC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Mainland China: {value}</p>} />
+              }
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.confirmedOC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
               }
             </Card>
           </Col>
@@ -123,12 +136,20 @@ class App extends Component {
             <Card bg="success" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h4>Recovered</h4>
               <NumberFormat value={this.state.recovered} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.recoveredIC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Mainland China: {value}</p>} />
+              }
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.recoveredOC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
+              }
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card bg="danger" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h4>Deaths</h4>
               <NumberFormat value={this.state.deaths} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.deathsIC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Mainland China: {value}</p>} />
+              }
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.deathsOC} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
+              }
             </Card>
           </Col>
         </Row>
