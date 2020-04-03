@@ -153,24 +153,30 @@ class App extends Component {
             </Card>
           </Col>
         </Row>
-        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Updated: {this.state.update}</Alert> : " "}
+        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Updated: {this.state.update}</Alert> : null}
         <Row style={{ marginTop: "2rem" }}>
 
           <Col xs={12} style={{ paddingTop: '1rem' }}>
             <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h2>Donations</h2>
               <ListGroup >
-                <Button style={{ marginTop: "0.5rem" }} href="https://www.cdcfoundation.org/give/ways-to-give">
+                <Button style={{ marginTop: "0.5rem" }} href="https://www.cdcfoundation.org/give/ways-to-give" target='_blank'>
                   CDC Foundation
                 </Button>
-                <Button style={{ marginTop: "0.5rem" }} href="https://covid19responsefund.org/">
+                <Button style={{ marginTop: "0.5rem" }} href="https://covid19responsefund.org/" target='_blank'>
                   WHO Response Fund
                 </Button>
-                <Button style={{ marginTop: "0.5rem" }} href="https://donate.sunnybrook.ca/donation-landing">
+                <Button style={{ marginTop: "0.5rem" }} href="https://donate.sunnybrook.ca/donation-landing" target='_blank'>
                   Sunnybrook Health Care Centre
                 </Button>
               </ListGroup>
             </Card>
+          </Col>
+        </Row>
+        <Row style={{ margin: "2rem 0" }}>
+          <Col xs={12} className='text-center'>
+            <span>made with &hearts; ~ be safe out there! </span> <br />
+            <Button href="https://www.johnlwin.info" target='_blank' variant="light">check out my site</Button>
           </Col>
         </Row>
       </Container>
