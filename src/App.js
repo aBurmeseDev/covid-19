@@ -263,7 +263,7 @@ class App extends Component {
         <Row style={{ margin: "2rem 0" }}>
           <Col xs={12} className='text-center'>
             <span>made with &hearts; ~ be safe out there! </span> <br />
-            <Button href="https://www.johnlwin.info" target='_blank' variant="light">check out my site</Button>
+            <a href="https://www.johnlwin.info" target='_blank' rel='noopener noreferrer'>check out my site</a>
           </Col>
         </Row>
       </Container>
