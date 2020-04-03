@@ -17,8 +17,7 @@ class App extends Component {
       countriesArr: [],
       update: " ",
       showUpdate: false,
-      outsideChina: 9,
-      percent: 10
+      outsideChina: 9
     }
   }
 
@@ -48,6 +47,9 @@ class App extends Component {
 
   async getCountryData(e) {
     if (e.target.value === "Select Country") {
+      this.setState({
+        showUpdate: false
+      })
       return this.getData()
     }
     try {
@@ -90,6 +92,7 @@ class App extends Component {
     })
   }
 
+
   render() {
 
     return (
@@ -97,22 +100,22 @@ class App extends Component {
 
       <Container>
         <h2 className="text-center">Hello from the inside...</h2>
-        <Row>
+
+        <Row style={{ marginTop: '2rem' }}>
           <Col>
-            <select onChange={this.getCountryData} className="custom-select">
+            <select onChange={this.getCountryData} className="custom-select text-center" style={{ background: '#000', color: '#fff' }}>
               <option defaultValue>Select Country</option>
               {this.renderCountryArr()}
             </select>
 
           </Col>
         </Row>
-        <Row style={{ marginTop: "2rem" }}>
+        <Row style={{ marginTop: "1rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center">
               <h4>Confirmed Cases</h4>
               <NumberFormat value={this.state.confirmed} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
-              {this.state.showUpdate ? null :
-                <NumberFormat value={this.state.outsideChina} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
+              {this.state.showUpdate ? null : <NumberFormat value={this.state.outsideChina} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
               }
             </Card>
           </Col>
