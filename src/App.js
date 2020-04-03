@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios'
 import "./App.css"
 import NumberFormat from 'react-number-format';
-import { Container, Row, Col, Card, Alert, ListGroup, Button } from "react-bootstrap"
+import { Container, Row, Col, Card, Alert, ListGroup, Button, Accordion } from "react-bootstrap"
 
 
 class App extends Component {
@@ -154,6 +154,79 @@ class App extends Component {
           </Col>
         </Row>
         {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Updated: {this.state.update}</Alert> : null}
+
+        <Row style={{ marginTop: "1rem" }}>
+
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Accordion>
+              <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
+
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    <h5>Know How it Spreads</h5>
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body><ul>
+                    <li>The virus is thought to spread mainly from person-to-person.</li>
+                    <li>Between people who are in close contact with one another within about 6 feet.</li>
+                    <li>Through respiratory droplets produced when an infected person coughs, sneezes or talks.</li>
+                    <li>These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs.</li>
+                    <li>COVID-19 may be spread by people who are not showing symptoms.</li>
+                  </ul></Card.Body>
+                </Accordion.Collapse>
+
+              </Card>
+            </Accordion>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Accordion >
+              <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
+
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    <h5>How to Protect Yourself</h5>
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body> <ul>
+                    <li>Wash your hands often with soap and water for at least 20 seconds.</li>
+                    <li>If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol.</li>
+                    <li>Avoid touching your eyes, nose, and mouth with unwashed hands.</li>
+                    <li>Avoid close contact with people who are sick.</li>
+                    <li>Put distance between yourself and other people. Remember that some people without symptoms may be able to spread virus.</li>
+                  </ul></Card.Body>
+                </Accordion.Collapse>
+
+              </Card>
+            </Accordion>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+            <Accordion>
+              <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
+
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                    <h5>How to Protect Others</h5>
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="2">
+                  <Card.Body><ul>
+                    <li>Stay home if you are sick, except to get medical care. </li>
+                    <li>Cover your mouth and nose with a tissue when you cough. Throw used tissues in the trash.</li>
+                    <li>If you are sick: Wear a facemask when you are around other people (e.g., sharing a room or vehicle).</li>
+                    <li>If you are NOT sick: You do not need to wear a facemask unless you are caring for someone who is sick</li>
+                    <li>Clean AND disinfect frequently touched surfaces daily.</li>
+                  </ul></Card.Body>
+                </Accordion.Collapse>
+
+              </Card>
+            </Accordion>
+          </Col>
+
+        </Row>
+
+
         <Row style={{ marginTop: "2rem" }}>
 
           <Col xs={12} style={{ paddingTop: '1rem' }}>
@@ -174,45 +247,7 @@ class App extends Component {
           </Col>
         </Row>
 
-        <Row style={{ marginTop: "1rem" }}>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
-              <h5>Know How it Spreads</h5>
-              <ul>
-                <li>The virus is thought to spread mainly from person-to-person.</li>
-                <li>Between people who are in close contact with one another (within about 6 feet).</li>
-                <li>Through respiratory droplets produced when an infected person coughs, sneezes or talks.</li>
-                <li>These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs.</li>
-                <li>Some recent studies have suggested that COVID-19 may be spread by people who are not showing symptoms.</li>
-              </ul>
-            </Card>
-          </Col>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
-              <h5>How to Protect Yourself</h5>
-              <ul>
-                <li>Wash your hands often with soap and water for at least 20 seconds.</li>
-                <li>If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol.</li>
-                <li>Avoid touching your eyes, nose, and mouth with unwashed hands.</li>
-                <li>Avoid close contact with people who are sick.</li>
-                <li>Put distance between yourself and other people. Remember that some people without symptoms may be able to spread virus.</li>
-              </ul>
-            </Card>
-          </Col>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
-              <h5>Take Steps to Protect Others</h5>
-              <ul>
-                <li>Stay home if you are sick, except to get medical care. </li>
-                <li>Cover your mouth and nose with a tissue when you cough. Throw used tissues in the trash.
-</li>
-                <li>If you are sick: Wear a facemask when you are around other people (e.g., sharing a room or vehicle).</li>
-                <li>If you are NOT sick: You do not need to wear a facemask unless you are caring for someone who is sick</li>
-                <li>Clean AND disinfect frequently touched surfaces daily.</li>
-              </ul>
-            </Card>
-          </Col>
-        </Row>
+
 
 
         <Row style={{ margin: "2rem 0" }}>
@@ -221,7 +256,7 @@ class App extends Component {
             <Button href="https://www.johnlwin.info" target='_blank' variant="light">check out my site</Button>
           </Col>
         </Row>
-      </Container>
+      </Container >
 
 
 
