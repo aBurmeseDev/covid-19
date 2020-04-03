@@ -153,10 +153,23 @@ class App extends Component {
             </Card>
           </Col>
         </Row>
-        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }}> Last Updated: {this.state.update}</Alert> : null}
+        {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }} className='text-center'> Last Updated: {this.state.update}</Alert> : null}
+
+        <Row>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }} className='text-center'>
+            <Button variant="info" style={{ marginTop: "0.5rem" }} href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target='_blank' >
+              What to Do if You Are Sick
+                </Button>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+
+          </Col>
+        </Row>
 
         <Row style={{ marginTop: "1rem" }}>
-
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Accordion>
               <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
@@ -180,7 +193,7 @@ class App extends Component {
             </Accordion>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-            <Accordion >
+            <Accordion>
               <Card style={{ width: 'auto', padding: '7px' }} className="text-center">
 
                 <Card.Header>
@@ -223,12 +236,9 @@ class App extends Component {
               </Card>
             </Accordion>
           </Col>
-
         </Row>
 
-
         <Row style={{ marginTop: "2rem" }}>
-
           <Col xs={12} style={{ paddingTop: '1rem' }}>
             <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
               <h2>Donations</h2>
@@ -256,7 +266,7 @@ class App extends Component {
             <Button href="https://www.johnlwin.info" target='_blank' variant="light">check out my site</Button>
           </Col>
         </Row>
-      </Container >
+      </Container>
 
 
 
