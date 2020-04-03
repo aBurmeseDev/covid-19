@@ -47,6 +47,9 @@ class App extends Component {
   }
 
   async getCountryData(e) {
+    if (e.target.value === "Select Country") {
+      return this.getData()
+    }
     try {
       const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
 
@@ -100,14 +103,17 @@ class App extends Component {
               <option defaultValue>Select Country</option>
               {this.renderCountryArr()}
             </select>
+
           </Col>
         </Row>
         <Row style={{ marginTop: "2rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto', padding: '7px', background: "rgb(255, 144, 0)" }} className="text-center">
-              <h4>Cases</h4>
+              <h4>Confirmed Cases</h4>
               <NumberFormat value={this.state.confirmed} displayType={'text'} thousandSeparator={true} renderText={value => <h1>{value}</h1>} />
-              <span>Outside China: {this.state.outsideChina}</span>
+              {this.state.showUpdate ? null :
+                <NumberFormat value={this.state.outsideChina} displayType={'text'} thousandSeparator={true} renderText={value => <p>Outside China: {value}</p>} />
+              }
             </Card>
           </Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
