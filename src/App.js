@@ -231,29 +231,25 @@ class App extends Component {
         </Row>
 
         <Row>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-
-          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}></Col>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }} className='text-center'>
             <Button variant="info" style={{ marginTop: "0.5rem" }} href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target='_blank'>
               What to Do if You Are Sick
             </Button>
           </Col>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-
-          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}></Col>
         </Row>
 
         <Row style={{ marginTop: "1rem", borderTop: "3px solid #000" }}>
-        <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}> 
-        <h5 className="text-center">Here are the great resources</h5>
-        </Col>
+          <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
+            <h5 className="text-center">Here are the great resources</h5>
+          </Col>
           <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto' }}>
               <Card.Img variant="top" src={liveMap} />
-              <Card.Body style={{height: 'auto'}}>
+              <Card.Body style={{ height: 'auto' }}>
                 <Card.Text>
-                If you haven’t seen this useful real-time dashboard by Johns Hopkins University yet, it’s worth bookmarking right now.
+                  If you haven’t seen this useful real-time dashboard by Johns Hopkins University yet, it’s worth bookmarking right now.
                 </Card.Text>
                 <Button variant="primary" target='_blank' href='https://coronavirus.jhu.edu/map.html'>Visit Site</Button>
               </Card.Body>
@@ -262,9 +258,9 @@ class App extends Component {
           <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto' }}>
               <Card.Img variant="top" src={spread} />
-              <Card.Body style={{height: 'auto'}}>
+              <Card.Body style={{ height: 'auto' }}>
                 <Card.Text>
-                This fantastic interactive page by the Washington Post actively simulates what happens when the virus spreads normally, contrasting it to how it may spread in a forced quarantine environment.
+                  This fantastic interactive page by the Washington Post actively simulates what happens when the virus spreads normally, contrasting it to how it may spread in a forced quarantine environment.
                 </Card.Text>
                 <Button variant="primary" target='_blank' href='https://www.washingtonpost.com/graphics/2020/world/corona-simulator/'>Visit Site</Button>
               </Card.Body>
@@ -273,10 +269,10 @@ class App extends Component {
           <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto' }}>
               <Card.Img variant="top" src={decode} />
-              <Card.Body style={{height: 'auto'}}>
-                
+              <Card.Body style={{ height: 'auto' }}>
+
                 <Card.Text>
-                This educational scrolling infographic by SCMP walks you through some of the more familiar types of coronaviruses, how they spread, and how they affect the human body.
+                  This educational scrolling infographic by SCMP walks you through some of the more familiar types of coronaviruses, how they spread, and how they affect the human body.
                 </Card.Text>
                 <Button variant="primary" target='_blank' href='https://multimedia.scmp.com/infographics/news/china/article/3075382/decoding-coronavirus-covid-19/index.html'>Visit Site</Button>
               </Card.Body>
@@ -285,11 +281,11 @@ class App extends Component {
           <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto' }}>
               <Card.Img variant="top" src={pandemics} />
-              <Card.Body style={{height: 'auto'}}>
-                
+              <Card.Body style={{ height: 'auto' }}>
+
                 <Card.Text>
-                On March 11th, the World Health Organization declared COVID-19 a pandemic.
-                In this infographic, we look at the data to show you the history of pandemics — all the way from the Black Death to how the current COVID-19 situation.
+                  On March 11th, the World Health Organization declared COVID-19 a pandemic.
+                  In this infographic, we look at the data to show you the history of pandemics — all the way from the Black Death to how the current COVID-19 situation.
                 </Card.Text>
                 <Button variant="primary" target='_blank' href='https://www.visualcapitalist.com/history-of-pandemics-deadliest/'>Visit Site</Button>
               </Card.Body>
@@ -298,10 +294,10 @@ class App extends Component {
           <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
             <Card style={{ width: 'auto' }}>
               <Card.Img variant="top" src={chart} />
-              <Card.Body style={{height: 'auto'}}>
-                
+              <Card.Body style={{ height: 'auto' }}>
+
                 <Card.Text>
-                The interactive chart updates daily based on the latest numbers, and you can actually search for any country by using the “Search” button. Using the filters on the right side, you can also sort by region as well.
+                  The interactive chart updates daily based on the latest numbers, and you can actually search for any country by using the “Search” button. Using the filters on the right side, you can also sort by region as well.
                 </Card.Text>
                 <Button variant="primary" target='_blank' href='https://www.visualcapitalist.com/infection-trajectory-flattening-the-covid19-curve/'>Visit Site</Button>
               </Card.Body>
@@ -311,7 +307,7 @@ class App extends Component {
 
         <Row>
           <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
-        <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen='true'></iframe>
+            <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen='true'></iframe>
           </Col>
         </Row>
 
@@ -336,8 +332,8 @@ class App extends Component {
 
         <Row style={{ margin: "2rem 0" }}>
           <Col xs={12} className='text-center'>
-            <span>made with &hearts; ~ be safe out there! - JL</span> <br />
-            <a href="https://www.johnlwin.info" target='_blank' rel='noopener noreferrer'>explore my other projects..</a>
+            <span>made with &hearts; by <a href="https://www.johnlwin.info" target='_blank' rel='noopener noreferrer'>John Lwin</a> ~ be safe out there!</span> <br />
+
           </Col>
         </Row>
       </Container>
