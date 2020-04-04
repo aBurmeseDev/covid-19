@@ -244,8 +244,6 @@ class App extends Component {
           </Col>
         </Row>
 
-
-        
         <Row style={{ marginTop: "1rem", borderTop: "3px solid #000" }}>
         <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}> 
         <h5 className="text-center">Here are the great resources</h5>
@@ -313,7 +311,7 @@ class App extends Component {
 
         <Row>
           <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
-        <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen='true'></iframe>
+        <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen='true'></iframe>
           </Col>
         </Row>
 
