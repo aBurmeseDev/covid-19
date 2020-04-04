@@ -314,12 +314,6 @@ class App extends Component {
           </Col>
         </Row>
 
-        <Row>
-          <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
-            <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen='true'></iframe>
-          </Col>
-        </Row>
-
         <Row style={{ marginTop: "2rem" }}>
           <Col xs={12} style={{ paddingTop: '1rem' }}>
             <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
