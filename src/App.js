@@ -118,7 +118,10 @@ class App extends Component {
       <Container>
         <h5 className="text-center">Hello from the inside...</h5>
 
-        <Row style={{ marginTop: '2rem' }}>
+        <Row style={{ marginTop: '2rem', borderTop: "2px solid #000" }}>
+          <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
+            <h5 className="text-center">CoronaVirus Explained</h5>
+          </Col>
           <Col>
             <select onChange={this.getCountryData} className="custom-select text-center" style={{ background: '#000', color: '#fff' }}>
               <option defaultValue>Select Country</option>
@@ -160,6 +163,12 @@ class App extends Component {
           </Col>
         </Row>
         {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }} className='text-center'> Last Updated: {this.state.update}</Alert> : null}
+
+        <Row>
+          <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
+            <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen='true'></iframe>
+          </Col>
+        </Row>
 
         <Row style={{ marginTop: "1rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
