@@ -3,6 +3,11 @@ import Axios from 'axios'
 import "./App.css"
 import NumberFormat from 'react-number-format';
 import { Container, Row, Col, Card, Alert, ListGroup, Button, Accordion } from "react-bootstrap"
+import decode from './assets/decoding.jpg'
+import pandemics from './assets/pandemics-history.jpg'
+import liveMap from './assets/realtimeMap.jpg'
+import spread from './assets/spread.jpg'
+import chart from './assets/chart.png'
 
 
 class App extends Component {
@@ -56,6 +61,7 @@ class App extends Component {
         showUpdate: false
       })
       return this.getData()
+
     }
     try {
       const response = await Axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`)
@@ -155,20 +161,6 @@ class App extends Component {
         </Row>
         {this.state.showUpdate ? <Alert variant="dark" style={{ marginTop: '1rem' }} className='text-center'> Last Updated: {this.state.update}</Alert> : null}
 
-        <Row>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-
-          </Col>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }} className='text-center'>
-            <Button variant="info" style={{ marginTop: "0.5rem" }} href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target='_blank' >
-              What to Do if You Are Sick
-                </Button>
-          </Col>
-          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
-
-          </Col>
-        </Row>
-
         <Row style={{ marginTop: "1rem" }}>
           <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
             <Accordion>
@@ -238,6 +230,97 @@ class App extends Component {
           </Col>
         </Row>
 
+        <Row>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }} className='text-center'>
+            <Button variant="info" style={{ marginTop: "0.5rem" }} href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target='_blank' >
+              What to Do if You Are Sick
+                </Button>
+          </Col>
+          <Col xs={12} md={12} lg={4} style={{ paddingTop: '1rem' }}>
+
+          </Col>
+        </Row>
+        
+        <Row>
+          <Col xs={12} md={12} lg={12} style={{ paddingTop: '1rem' }}>
+        <iframe title='covid explained' width="100%" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen ></iframe>
+
+          </Col>
+        </Row>
+
+
+        <Row style={{ marginTop: "1rem" }}>
+          <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
+            <Card style={{ width: 'auto' }}>
+              <Card.Img variant="top" src={decode} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
+            <Card style={{ width: 'auto' }}>
+              <Card.Img variant="top" src={liveMap} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
+            <Card style={{ width: 'auto' }}>
+              <Card.Img variant="top" src={pandemics} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
+            <Card style={{ width: 'auto' }}>
+              <Card.Img variant="top" src={spread} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} md={12} lg={6} style={{ paddingTop: '1rem' }}>
+            <Card style={{ width: 'auto' }}>
+              <Card.Img variant="top" src={chart} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+
         <Row style={{ marginTop: "2rem" }}>
           <Col xs={12} style={{ paddingTop: '1rem' }}>
             <Card border="primary" style={{ width: 'auto', padding: '7px' }} className="text-center">
@@ -262,51 +345,11 @@ class App extends Component {
 
         <Row style={{ margin: "2rem 0" }}>
           <Col xs={12} className='text-center'>
-            <span>made with &hearts; ~ be safe out there! </span> <br />
+            <span>made with &hearts; ~ be safe out there! - JL</span> <br />
             <a href="https://www.johnlwin.info" target='_blank' rel='noopener noreferrer'>check out my site</a>
           </Col>
         </Row>
       </Container>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // <div className="container">
-      //   <h2 className="text-center">Hello from the inside...</h2>
-      //   <div className="row">
-      //     <div className="col-sm list">
-      //       <select onChange={this.getCountryData} className="custom-select">
-      //         <option selected>Select Country</option>
-      //         {this.renderCountryArr()}
-      //       </select>
-      //     </div>
-      //   </div>
-      //   <div className="row">
-      //     <div className="col py-3 px-lg-5 border bg-light">
-      //       <h3>Cases</h3>
-      //       <h4>{this.state.confirmed}</h4>
-      //     </div>
-      //     <div className="col py-3 px-lg-5 border bg-light">
-      //       <h3>Recovered</h3>
-      //       <h4>{this.state.recovered}</h4>
-      //     </div>
-      //     <div className="col py-3 px-lg-5 border bg-light">
-      //       <h3>Deaths</h3>
-      //       <h4>{this.state.deaths}</h4>
-      //     </div>
-      //   </div>
-      //   {this.state.showUpdate ? <span> Last Update: {this.state.update}</span> : " "}
-
-      // </div>
 
     )
   }
