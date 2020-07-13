@@ -18,9 +18,33 @@ The site features links to guidance and other resources for preventing exposures
   - Github
   - Heroku
   
+### Development
+
+To setup the app for development on your local machine, please follow the instructions below:
+
+1. Clone the repo to your machine
+
+```bash
+git clone https://github.com/aBurmeseDev/covid-19.git
+```
+
+2. Install necessary packages
+
+```bash
+npm install
+```
+
+3. Start the development environment
+
+```bash
+npm start
+```
+
+4. Visit http://localhost:3000
+
 ### Next Steps
-   - Expand social features, allowing users to accept friend and potluck requests
-   - Ensure that site is completely responsive for mobile
+   - Graphs to visualize cases across United States
+   - Option to look up cases by State
 
 #### [Live Demo](https://care-covid.herokuapp.com/)
 
