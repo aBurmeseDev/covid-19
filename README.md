@@ -1,4 +1,4 @@
-# Care-Covid
+# Care-COVID
 
 ### Intro
 This is one of my side projects built in two days, with the purpose of keeping others informed with the Coronavirus Disease 2019 (COVID-19) cases worldwide and resources.
